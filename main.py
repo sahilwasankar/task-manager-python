@@ -15,9 +15,8 @@ while True:
      choice = input("Enter choice: ")
 
      if choice == "1":
-          task_id = input("Enter ID: ").strip()
           title = input("Enter Title: ").strip()
-          task = Task(task_id,title)
+          task = Task(title)
           manager.add_task(task)
 
      elif choice == "2" :

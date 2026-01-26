@@ -1,7 +1,6 @@
 class Task :
-    def __init__(self, task_id,title,completed = False):
+    def __init__(self,title,completed = False):
 
-        self.task_id = task_id
         self.title = title
         self.completed = completed
 
@@ -9,12 +8,11 @@ class Task :
      self.completed = True
 
     def to_csv_row(self):
-        return[self.task_id,self.title,self.completed]
+        return[self.title,self.completed]
     
     @staticmethod
     def from_csv_row(row):
-       task_id = int(row[0])
-       title = row[1]
-       completed = row[2] == "True"
-       return Task(task_id,title,completed)
+       title = row[0]
+       completed = row[1] == "True"
+       return Task(title,completed)
        
