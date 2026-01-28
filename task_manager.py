@@ -54,3 +54,18 @@ class TaskManager:
             print("task does not exists")
 
 
+    def delete_task(self, title):
+        for task in self.tasks:
+            if task.title == title:
+                print("\nTask found:")
+                print(f"Title: {task.title}\nStatus:{task.completed}")
+                confirm = input("Are you sure you want to delete this task: (yes/no): ")
+                if confirm == "yes":
+                    self.tasks.remove(task)
+                    self.save_task()
+                    print("Task deleted successfully")
+                else:
+                    print("Delete operation cancelled")
+
+                return
+        print("Task does not found")
