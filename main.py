@@ -5,7 +5,8 @@ def show_menu():
     print("\n===== TASK MANAGEMENT SYSTEM ====")
     print("1. Add Task")
     print("2. View Tasks")
-    print("3. Exit")
+    print("3. Search Task")
+    print("4. Exit")
     print("=================================")
 
 manager = TaskManager()
@@ -22,7 +23,11 @@ while True:
      elif choice == "2" :
           manager.view_tasks()   
 
-     elif choice == "3"  :
+     elif choice == "3" :
+          search = input("Enter the Task to search: ").strip()
+          manager.search_task(search)
+
+     elif choice == "4"  :
           print("Goodbye 👋") 
           break
      else:
