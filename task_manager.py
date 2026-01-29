@@ -28,8 +28,19 @@ class TaskManager:
             for task in self.tasks:
                 writer.writerow(task.to_csv_row())
 
+    def task_exists(self,title):
+        for task in self.tasks:
+            if task.title == title:
+                return True
+        return False    
+
+
 
     def add_task(self,task):      
+        if self.task_exists(task.title):
+            print("Task already exists. Use a unique Title. ")
+            return
+        
         self.tasks.append(task) 
         self.save_task()
         print("Task added Successfully")       
