@@ -1,4 +1,5 @@
-python,False
-javascript,False
-java,False
-gym,False
+python,low,False
+java,high,False
+js,medium,False
+code,high,False
+gym,high,False

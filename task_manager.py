@@ -15,8 +15,9 @@ class TaskManager:
             reader  = csv.reader(file)
             for row in reader:
                 title = row[0]
-                completed = row[1]
-                self.tasks.append(Task(title,completed))
+                priority = row[1]
+                completed = row[2]
+                self.tasks.append(Task(title,priority,completed))
         except:
             FileNotFoundError
             pass
@@ -53,13 +54,13 @@ class TaskManager:
 
         for task in self.tasks:
               status = "Done" if task.completed else "Pending"
-              print(f"Title: {task.title} Status: {status}")
+              print(f"Title: {task.title} priority: {task.priority} Status: {status}")
 
 
     def search_task(self,title):
             for task in self.tasks:
                 if task.title == title:
-                    print(f"Title: {task.title}\nStatus: {task.completed}")
+                    print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {task.completed}")
                     return 
                 
             print("task does not exists")
@@ -69,7 +70,7 @@ class TaskManager:
         for task in self.tasks:
             if task.title == title:
                 print("\nTask found:")
-                print(f"Title: {task.title}\nStatus:{task.completed}")
+                print(f"Title: {task.title}\nPriority: {task.priority}\nStatus:{task.completed}")
                 confirm = input("Are you sure you want to delete this task: (yes/no): ")
                 if confirm == "yes":
                     self.tasks.remove(task)
