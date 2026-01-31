@@ -18,7 +18,7 @@ while True:
 
      if choice == "1":
           title = input("Enter Title: ").strip()
-          priority = input("Enter priority (High/Low/Medium): ").strip()
+          priority = input("Enter priority (High/Low/Medium): ").strip().lower()
           task = Task(title,priority)
           manager.add_task(task)
 
