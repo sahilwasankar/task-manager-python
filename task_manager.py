@@ -35,14 +35,22 @@ class TaskManager:
                 return True
         return False    
 
+    def task_priority(self,task):
+        priority_order = {"high":0 ,"medium": 1 , "low": 2}
+        for i in range(len(self.tasks)):
+            if priority_order[task.priority] < priority_order[self.tasks[i].priority]:
+               self.tasks.insert(i , task)#at this index the value will get inserted
+               return
+        self.tasks.append(task)
 
+      
 
     def add_task(self,task):      
         if self.task_exists(task.title):
             print("Task already exists. Use a unique Title. ")
             return
         
-        self.tasks.append(task) 
+        self.task_priority(task)
         self.save_task()
         print("Task added Successfully")       
 
