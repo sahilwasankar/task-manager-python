@@ -71,11 +71,15 @@ class TaskManager:
     def search_task(self,title):
             for task in self.tasks:
                 if task.title == title:
-                    print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {task.completed}")
-                    return 
+                      if task.completed == True:
+                         status = "Done"
+                      else:
+                        status = "pending" 
+                        print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {status}")
+                        return
                 
-            print("task does not exists")
-
+            print("Task not exists.")  
+                
 
     def delete_task(self, title):
         for task in self.tasks:
