@@ -84,8 +84,13 @@ class TaskManager:
     def delete_task(self, title):
         for task in self.tasks:
             if task.title == title:
+                if task.completed == True:
+                    status = "Done"
+                else:
+                    status = "pending"
+
                 print("\nTask found:")
-                print(f"Title: {task.title}\nPriority: {task.priority}\nStatus:{task.completed}")
+                print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {status}")
                 confirm = input("Are you sure you want to delete this task: (yes/no): ")
                 if confirm == "yes":
                     self.tasks.remove(task)
