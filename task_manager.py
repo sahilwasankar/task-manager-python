@@ -61,7 +61,10 @@ class TaskManager:
 
 
         for task in self.tasks:
-              status = "Done" if task.completed else "Pending"
+              if task.completed == True:
+                  status = "Done"
+              else:
+                  status = "pending"    
               print(f"Title: {task.title} priority: {task.priority} Status: {status}")
 
 
