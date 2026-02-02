@@ -52,7 +52,17 @@ class TaskManager:
         
         self.task_priority(task)
         self.save_task()
-        print("Task added Successfully")       
+        print("Task added Successfully")    
+
+    def mark_status(self,title):
+     for task in self.tasks:
+        if task.title == title:
+             task.mark_completed()
+             self.save_task()
+             print("Task marked as completed")
+             return
+     print("Task does not exist. Enter a valid task title")      
+
 
 
     def view_tasks(self):
@@ -75,8 +85,8 @@ class TaskManager:
                          status = "Done"
                       else:
                         status = "pending" 
-                        print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {status}")
-                        return
+                      print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {status}")
+                      return
                 
             print("Task not exists.")  
                 
