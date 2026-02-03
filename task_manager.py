@@ -16,7 +16,7 @@ class TaskManager:
             for row in reader:
                 title = row[0]
                 priority = row[1]
-                completed = row[2]
+                completed = row[2] == "True"
                 self.tasks.append(Task(title,priority,completed))
         except:
             FileNotFoundError
@@ -111,3 +111,22 @@ class TaskManager:
 
                 return
         print("Task does not found")
+
+
+
+    def update_task_priority(self,title,new_priority):
+        new_priority = new_priority.lower()
+
+        if new_priority not in ["high","medium","low"]:
+            print("Invalid priority. Use High / Medium / Low")
+            return
+        
+        for task in self.tasks:
+            if task.title == title:
+                task.priority = new_priority
+                self.save_task()
+                print("Task priority updated successfully")
+                return
+        print("Task not found.")    
+
+

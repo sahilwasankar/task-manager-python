@@ -8,7 +8,8 @@ def show_menu():
     print("3. Mark task as completed")
     print("4. Search Task")
     print("5. Delete Task")
-    print("6. Exit")
+    print("6. Update Task Priority")
+    print("7. Exit")
     print("=================================")
 
 
@@ -29,7 +30,7 @@ while True:
           manager.view_tasks()  
 
      elif choice == "3" :
-           title = input("Enter task title: ").strip()   
+           title = input("Enter Task title: ").strip()   
            manager.mark_status(title)
            
 
@@ -39,9 +40,14 @@ while True:
 
      elif choice == "5" :
           delete = input("Enter Task to delete: ").strip()
-          manager.delete_task(delete)    
+          manager.delete_task(delete)  
 
-     elif choice == "6"  :
+     elif choice == "6":
+          title = input("Enter Task title: ").strip()
+          new_priority = input("Enter new priority: ").strip()  
+          manager.update_task_priority(title,new_priority)
+
+     elif choice == "7"  :
           print("Goodbye 👋") 
           break
      else:
