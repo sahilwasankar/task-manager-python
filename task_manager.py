@@ -127,6 +127,19 @@ class TaskManager:
                 self.save_task()
                 print("Task priority updated successfully")
                 return
-        print("Task not found.")    
+        print("Task not found.")   
+
+
+    def display_completed_task(self):     
+        found = False
+        for task in self.tasks:
+            if task.completed:
+                 if task.completed :
+                  print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: Done")
+                  print("")
+                  found = True
+
+        if not found :
+            print("no completed task found.")
 
 

@@ -9,7 +9,8 @@ def show_menu():
     print("4. Search Task")
     print("5. Delete Task")
     print("6. Update Task Priority")
-    print("7. Exit")
+    print("7. Display completed task")
+    print("8. Exit")
     print("=================================")
 
 
@@ -47,7 +48,10 @@ while True:
           new_priority = input("Enter new priority: ").strip()  
           manager.update_task_priority(title,new_priority)
 
-     elif choice == "7"  :
+     elif     choice == "7":
+          manager.display_completed_task()
+
+     elif choice == "8"  :
           print("Goodbye 👋") 
           break
      else:
