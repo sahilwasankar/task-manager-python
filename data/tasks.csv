@@ -1,4 +1,4 @@
 python,high,False
-run,high,True
-code,medium,False
+run,medium,True
 gym,medium,True
+communication,medium,False

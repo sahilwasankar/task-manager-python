@@ -5,12 +5,13 @@ def show_menu():
     print("\n===== TASK MANAGEMENT SYSTEM ====")
     print("1. Add Task")
     print("2. View Tasks")
-    print("3. Mark task as completed")
+    print("3. Mark Task As Completed")
     print("4. Search Task")
     print("5. Delete Task")
     print("6. Update Task Priority")
-    print("7. Display completed task")
-    print("8. Exit")
+    print("7. Display Completed Task")
+    print("8. Display Task Using Priority")
+    print("9. Exit")
     print("=================================")
 
 
@@ -48,10 +49,15 @@ while True:
           new_priority = input("Enter new priority: ").strip()  
           manager.update_task_priority(title,new_priority)
 
-     elif     choice == "7":
+     elif choice == "7":
           manager.display_completed_task()
 
-     elif choice == "8"  :
+     elif choice == "8":
+          priority = input("Enter task priority: ").strip()
+          manager.display_tasks_by_priority(priority)
+
+
+     elif choice == "9"  :
           print("Goodbye 👋") 
           break
      else:

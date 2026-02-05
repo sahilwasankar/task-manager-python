@@ -129,6 +129,28 @@ class TaskManager:
                 return
         print("Task not found.")   
 
+    def display_tasks_by_priority(self,priority):
+        priority = priority.lower()
+        found = False
+
+        if priority not in ["high","medium","low"]:
+            print("Invalid priority. Use High / Medium / Low")
+            return
+        for task in self.tasks:
+            if task.priority == priority:
+                    found = True
+                    if task.completed == True:
+                         status = "Done"
+                    else:
+                        status = "pending" 
+                  
+                    print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {status}")
+                    print("")
+                    
+        if not found:
+            print("No tasks found with this priority")
+
+            
 
     def display_completed_task(self):     
         found = False
@@ -142,4 +164,4 @@ class TaskManager:
         if not found :
             print("no completed task found.")
 
-
+   
