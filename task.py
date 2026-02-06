@@ -11,9 +11,5 @@ class Task :
     def to_csv_row(self):
         return[self.title,self.priority,self.completed]
     
-    @staticmethod
-    def from_csv_row(row):
-       title = row[0]
-       completed = row[1] == "True"
-       return Task(title,completed)
+
        
