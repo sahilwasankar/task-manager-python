@@ -52,22 +52,22 @@ class TaskManager:
         
         self.task_priority(task)
         self.save_task()
-        print("Task added Successfully")    
+        print("Task added Successfully ✅")    
 
     def mark_status(self,title):
      for task in self.tasks:
         if task.title == title:
              task.mark_completed()
              self.save_task()
-             print("Task marked as completed")
+             print("Task marked as completed ✅")
              return
-     print("Task does not exist. Enter a valid task title")      
+     print("Task does not exist. Enter a valid task title ❌")      
 
 
 
     def view_tasks(self):
         if not self.tasks :
-            print("Task not found")
+            print("Task not found ❌")
 
 
         for task in self.tasks:
@@ -88,7 +88,7 @@ class TaskManager:
                       print(f"Title: {task.title}\nPriority: {task.priority}\nStatus: {status}")
                       return
                 
-            print("Task not exists.")  
+            print("Task not exists ❌")  
                 
 
     def delete_task(self, title):
@@ -105,12 +105,12 @@ class TaskManager:
                 if confirm == "yes":
                     self.tasks.remove(task)
                     self.save_task()
-                    print("Task deleted successfully")
+                    print("Task deleted successfully 🗑️")
                 else:
-                    print("Delete operation cancelled")
+                    print("Delete operation cancelled ⚠️")
 
                 return
-        print("Task does not found")
+        print("Task does not found 📋")
 
 
 
@@ -118,23 +118,23 @@ class TaskManager:
         new_priority = new_priority.lower()
 
         if new_priority not in ["high","medium","low"]:
-            print("Invalid priority. Use High / Medium / Low")
+            print("Invalid priority. Use High / Medium / Low ⚠️")
             return
         
         for task in self.tasks:
             if task.title == title:
                 task.priority = new_priority
                 self.save_task()
-                print("Task priority updated successfully")
+                print("Task priority updated successfully ✅")
                 return
-        print("Task not found.")   
+        print("Task not found ❌")   
 
     def display_tasks_by_priority(self,priority):
         priority = priority.lower()
         found = False
 
         if priority not in ["high","medium","low"]:
-            print("Invalid priority. Use High / Medium / Low")
+            print("Invalid priority. Use High / Medium / Low ⚠️")
             return
         for task in self.tasks:
             if task.priority == priority:
@@ -148,7 +148,7 @@ class TaskManager:
                     print("")
                     
         if not found:
-            print("No tasks found with this priority")
+            print("No tasks found with this priority 📋")
 
             
 
@@ -162,6 +162,6 @@ class TaskManager:
                   found = True
 
         if not found :
-            print("no completed task found.")
+            print("no completed task found 📋")
 
    

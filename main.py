@@ -3,15 +3,15 @@ from task_manager import TaskManager
 
 def show_menu():
     print("\n===== TASK MANAGEMENT SYSTEM ====")
-    print("1. Add Task")
-    print("2. View Tasks")
-    print("3. Mark Task As Completed")
-    print("4. Search Task")
-    print("5. Delete Task")
-    print("6. Update Task Priority")
-    print("7. Display Completed Task")
-    print("8. Display Task Using Priority")
-    print("9. Exit")
+    print("1. Add Task ➕")
+    print("2. View Tasks 👀")
+    print("3. Mark Task As Completed ✅")
+    print("4. Search Task 🔍")
+    print("5. Delete Task 🗑️")
+    print("6. Update Task Priority ✏️")
+    print("7. Display Completed Task ✅")
+    print("8. Display Task Using Priority 🎯")
+    print("9. Exit 👋")
     print("=================================")
 
 
